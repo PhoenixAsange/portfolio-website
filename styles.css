@@ -10,20 +10,10 @@
     max-width: 400px;
   }
 
-  .blerb h1 {
-    font-size: 36px; /* Reduce heading size for smaller screens */
+  nav-bar {
+    width: 450px;
   }
-
-  .menu button, .menu a {
-    padding: 8px 12px; /* Reduce padding for better mobile fit */
-  }
-
-  .nav-bar {
-    max-width: 300px;
-  }
-
 }
-
 
 body {
   display: flex;
@@ -48,6 +38,9 @@ a {
 
 .nav {
   display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu button {
@@ -65,6 +58,12 @@ a {
   color: black;
   text-decoration: none;
   padding: 10px 15px;
+}
+
+.coming {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu .content {
@@ -87,9 +86,9 @@ a {
   border-color: black;
   border-radius: 5px;
   border-style: solid;
-  min-width: 500px;
-  min-height: 20px;
   padding-left: 5px;
+  width: 45%;
+
 }
 
 .nav-bar input {
@@ -124,29 +123,108 @@ a {
 }
 
 .split {
-display: flex;
-width: 100%;
-}
-
-.skills, .academic {
-  flex: 1;
-  flex-wrap: 1;
-}
-
-.box {
   display: flex;
-  margin: 15px;
-  border: black;
-  border-style: solid;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .academic {
   display: flex;
   flex-direction: column;
-  margin: 15px;
+  width: 50%;
 }
 
-.animated-text span{
+.academic-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-panel {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.skill-overview {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-overview div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.skill {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  min-width: 150px;
+  margin: 5px;
+  border-style: solid;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.languages .skill {
+  border: #ff8c08;
+  background-color: #ff8c08;
+}
+
+.core .skill {
+  border: #be71e5;
+  background-color: #be71e5;
+}
+
+.tools .skill {
+  border: #4ad74e;
+  background-color: #4ad74e;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
+}
+
+.client-information,
+.message {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.client-information input {
+  flex: 1 1 50%;
+  min-height: 35px;
+  margin: 2px;
+}
+
+.message textarea {
+  flex: 1 1 75%;
+  min-height: 75px;
+  margin: 2px;
+}
+
+.message button {
+  flex: 1 1 25%;
+  margin: 2px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0 25px;
+}
+
+.animated-text span {
   position: relative;
 }
 
@@ -164,38 +242,60 @@ width: 100%;
   background-color: white;
   border-left: 2px solid #03bafc;
   right: -8px;
-  animation: cursor .8s infinite, typing 25s steps(14) infinite;
+  animation: cursor 0.8s infinite, typing 25s steps(14) infinite;
 }
 
 @keyframes cursor {
-    to {
-      border-left: 2px solid transparent;
-    }
+  to {
+    border-left: 2px solid transparent;
+  }
 }
 
 @keyframes words {
-  0%,20%{
-      content: "Innovation.";
+  0%,
+  20% {
+    content: "Innovation.";
   }
-  21%,40%{
-      content: "Software Development.";
+  21%,
+  40% {
+    content: "Software Development.";
   }
-  41%,60%{
-      content: "Artificial Intelligence.";
+  41%,
+  60% {
+    content: "Artificial Intelligence.";
   }
-  61%,80%{
-      content: "Web Development.";
+  61%,
+  80% {
+    content: "Web Development.";
   }
-  81%,100%{
-      content: "Software.";
+  81%,
+  100% {
+    content: "Software.";
   }
 }
 
 @keyframes typing {
-  10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
-      width: 0;
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
   }
-  5%,20%,25%,40%,45%,60%,65%,80%,85%{
-      width: calc(100% + 8px);
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
   }
 }
