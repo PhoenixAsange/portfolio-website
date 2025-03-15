@@ -82,7 +82,7 @@ a {
 
 .nav-bar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-color: black;
   border-radius: 5px;
@@ -113,6 +113,37 @@ a {
 .blerb h1 {
   font-family: "Inconsolata Bold", monospace;
   font-size: 50px;
+}
+
+.socials {
+  display: flex;
+}
+
+.socials i {
+  padding: 20px;
+}
+
+.split {
+display: flex;
+width: 100%;
+}
+
+.skills, .academic {
+  flex: 1;
+  flex-wrap: 1;
+}
+
+.box {
+  display: flex;
+  margin: 15px;
+  border: black;
+  border-style: solid;
+}
+
+.academic {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
 }
 
 .animated-text span{
