@@ -1,60 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phoenix Asange-Harper | home</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <script type="text/javascript" src="./portfolio-website.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/c68ef3a924.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="blerb">
-      <div>
-        <h1>I'm <a class="name" href="./about.html">Phoenix</a></h1>
-        <div>Passionate Computer Science student, captivated by</div>
-        <div class="animated-text">
-          <span></span>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phoenix Asange-Harper | home</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="text/javascript" src="./portfolio-website.js" defer></script>
+  <script src="https://kit.fontawesome.com/c68ef3a924.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="blerb">
+    <div>
+      <h1>I'm <a class="name" href="./about.html">Phoenix</a></h1>
+      <div>Computer Science student, captivated by</div>
+      <div class="animated-text">
+        <span></span>
       </div>
     </div>
+  </div>
 
-    <div class="socials">
-      <a href="https://github.com/PhoenixAsange" target="_blank"><i class="fa-brands fa-github fa-2xl" ></i></a>
-      <a href="https://www.linkedin.com/in/phoenix-asangeharper" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+  <div class="socials">
+    <a href="https://github.com/PhoenixAsange" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+    <a href="https://www.linkedin.com/in/phoenix-asangeharper" target="_blank"><i
+        class="fa-brands fa-linkedin fa-2xl"></i></a>
+  </div>
+
+  <div class="skill-panel">
+    <h2 class="about-title">Skills</h2>
+    <div class="skills">
+      <div class="skill-programming">C++</div>
+      <div class="skill-paradigm">Web</div>
+      <div class="skill-hard">Git</div>
+      <div class="skill-paradigm-important">Artifical Intelligence</div>
+      <div class="skill-hard">Linux</div>
+      <div class="skill-programming">Python</div>
+      <div class="skill-paradigm-important">Algorithms</div>
+      <div class="skill-paradigm">Databases</div>
+      <div class="skill-hard">MySQL</div>
+      <div class="skill-paradigm-important">OOP</div>
     </div>
+  </div>
+  </div>
 
-    <div class="skill-panel">
-          <h2 class="about-title">Skills</h2>
-          <div class="skills">
-            <div class="skill">C++</div>
-            <div class="skill">Python</div>
-            <div class="skill">Web</div>
-            <div class="skill">OOP</div>
-            <div class="skill">Algorithms</div>
-            <div class="skill">Databases</div>
-            <div class="skill">Git</div>
-            <div class="skill">Linux</div>
-            <div class="skill">MySQL</div>
-          </div>
-        </div>
+  <div class="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <img src="./assets/images/heap-sort-extreme-value-distributions.png" alt="Time Complexity Tool">
+      <strong>Time Complexity Graphing Tool</strong>
+      <p>Records algorithm runtime and visualises it's performance changes.</p>
     </div>
+    <div class="project">
+      <img src="./assets/images/heap-sort-extreme-value-distributions.png" alt="Time Complexity Tool">
+      <strong>Diamond Encrypt</strong>
+      <p>A C++ encryption and decryption algorithm using a custom diamond-grid cipher.</p>
+    </div>
+  </div>
 
-    <div class="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <img src="./assets/images/heap-sort-extreme-value-distributions.png" alt="Time Complexity Tool">
-        <strong>Time Complexity Graphing Tool</strong>
-        <p>Records algorithm runtime and visualises it's performance changes.</p>
+  <div class="contact">
+    <h3>Feel free to get in touch!</h3>
+    <form id="form">
+      <input type="hidden" name="access_key" value="6bcb4a9e-35f1-4e0a-a1c7-997babc6c3b4" />
+
+      <div class="client-information">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
       </div>
-      <div class="project">
-        <img src="./assets/images/diamond-encrypt." alt="Diamond Encrypt">
-        <strong>Diamond Encrypt</strong>
-        <p>A C++ encryption and decryption algorithm using a custom diamond-grid cipher.</p>
+
+      <div class="message">
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none" />
+
+        <button type="submit">Submit Form</button>
       </div>
-    </div>
-  </body>
+    </form>
+
+    <div id="result"></div>
+  </div>
+</body>
+
 </html>
