@@ -28,6 +28,10 @@
     align-items: center;
     width: 100%;
   }
+
+  .project {
+    flex: 1 1 100%;
+  }
 }
 
 body {
@@ -139,18 +143,12 @@ a {
 
 .socials {
   display: flex;
+  padding-top: 75px;
+  padding-bottom: 50px;
 }
 
 .socials i {
   padding: 20px;
-}
-
-.split {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 }
 
 .academic {
@@ -206,18 +204,11 @@ a {
 .skill-panel {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  padding-bottom: 75px;
 }
 
-.skill-overview {
+.skills {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.skill-overview div {
-  display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
 }
 
@@ -233,21 +224,6 @@ a {
   border-radius: 15px;
   font-size: 20px;
   font-weight: 700;
-}
-
-.languages .skill {
-  background-image: linear-gradient(to right top, rgb(23, 94, 113), rgb(75, 143, 215));
-  border: none;
-}
-
-.core .skill {
-  background-image: linear-gradient(to right top, rgb(67, 34, 153), rgb(185, 84, 222));
-  border: none;
-}
-
-.tools .skill {
-  background-image: linear-gradient(to right top, rgb(20, 114, 25), rgb(97, 237, 81));
-  border: none;
 }
 
 .contact {
@@ -364,4 +340,41 @@ a {
   85% {
     width: calc(100% + 8px);
   }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+
+.project {
+  background-color: #f5f5f5; /* Light box background */
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; /* Stack image, title, and blurb vertically */
+  align-items: flex-start;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+  width: 100%; /* Full width inside the box */
+  max-height: 200px; /* Limit height */
+  object-fit: cover; /* Keep aspect ratio */
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.project strong {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project p {
+  font-size: 0.95rem;
+  color: #555;
 }
