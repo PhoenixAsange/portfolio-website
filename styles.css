@@ -5,9 +5,9 @@
     url("assets/fonts/Inconsolata-Bold.woff") format("woff");
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
   body {
-    max-width: 400px;
+    max-width: 420px;
   }
 
   nav-bar {
@@ -34,10 +34,7 @@
   }
 
   .skill-paradigm-important {
-    flex: 0 0 100%;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 
@@ -118,7 +115,6 @@ a {
   border-style: solid;
   padding-left: 5px;
   width: 45%;
-
 }
 
 .nav-bar input {
@@ -197,7 +193,6 @@ a {
 .academic-content p {
   margin-top: 15px;
   margin-bottom: 0;
-
 }
 
 .academic-content .school {
@@ -246,31 +241,35 @@ a {
   justify-content: center;
   align-items: center;
   height: 25px;
-  min-width: 150px;
-  margin: 5px;
+  margin: 10px;
+  padding: 0px 15px;
   border-style: solid;
   border-radius: 15px;
   font-size: 20px;
   font-weight: 700;
+  width: calc(fit-content + 20px);
+  min-width: auto;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .skill-programming {
-  flex: 0 0 100px;
+  flex: 0 0 auto;
   background-image: linear-gradient(to left, #f03b3b, #f78400);
 }
 
 .skill-paradigm {
-  flex: 0 0 260px;
+  flex: 0 0 auto;
   background-image: linear-gradient(to left, #5ee73c, #6baf3e);
 }
 
 .skill-paradigm-important {
-  flex: 0 0 min(260px, 100%);
+  flex: 0 0 auto;
   background-image: linear-gradient(to left, #7fa3f0, #4797e2);
 }
 
 .skill-hard {
-  flex: 0 0 60px;
+  flex: 0 0 auto;
   background-image: linear-gradient(to left, #7954e0, #aa8bdd);
 }
 
@@ -279,7 +278,6 @@ a {
   flex-direction: column;
   align-items: center;
   margin: 50px;
-
 }
 
 .client-information,
