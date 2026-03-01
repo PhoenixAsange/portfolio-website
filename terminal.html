@@ -7,19 +7,31 @@
     <link rel="stylesheet" href="./styles.css" />
     <style>
       body { background:#111; color:#cfcfcf; font-family: monospace; display:flex; align-items:flex-start; justify-content:center; padding:40px }
-      .terminal { width: 100%; max-width: 900px; background:#0b0b0b; border-radius:8px; padding:20px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+  .terminal { width: 100%; max-width: 900px; background:#0b0b0b; border-radius:8px; padding:20px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); display:flex; flex-direction:column }
       .prompt { color:#03bafc }
       .line { margin:6px 0 }
+      .input-box { background:transparent; color:inherit; border:1px solid rgba(255,255,255,0.06); padding:8px 10px; border-radius:4px; font-family:inherit; font-size:1rem; outline:none; width:78%; margin-left:8px }
+      .input-box:focus { box-shadow:0 0 0 3px rgba(3,186,252,0.06); border-color:rgba(3,186,252,0.2) }
+      .line .prompt + .input-box { vertical-align:middle }
       a.back { color:#03bafc; text-decoration:none; display:inline-block; margin-top:12px }
     </style>
   </head>
   <body>
     <div class="terminal">
-      <div class="line"><span class="prompt">phoenix@portfolio:</span> <span>$</span> Welcome to terminal mode — this is a demo page.</div>
-      <div class="line">Type <code>help</code> to see available commands (demo only).</div>
-      <div class="line">This page intentionally contains no real terminal functionality.</div>
+      <div id="terminal-output">
+        <div class="line"><span class="prompt">user@phoenix:</span> <span>$</span> Welcome to terminal mode — this is a demo page.</div>
+        <div class="line">Type <code>help</code> to see available commands (demo only).</div>
+        <div class="line">This page intentionally contains no real terminal functionality.</div>
+      </div>
+
+      <div class="line input-line">
+        <span class="prompt">user@phoenix:</span>
+        <input id="terminal-input" class="input-box" type="text" placeholder="Type a command and press Enter" aria-label="Terminal input" autocomplete="off" />
+      </div>
 
       <a class="back" href="./index.html">← back to home</a>
+
+      <script src="./terminal.js"></script>
     </div>
   </body>
 </html>
