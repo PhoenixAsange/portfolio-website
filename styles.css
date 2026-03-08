@@ -159,8 +159,8 @@ a {
   padding: 20px;
 }
 
-/* button for opening the terminal-mode page */
-.terminal-btn {
+/* generic styling for the top buttons (resume, terminal) */
+.social-top a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -174,9 +174,27 @@ a {
   cursor: pointer;
 }
 
-.terminal-btn:hover {
+.social-top a:hover {
   background-color: #f0f0f0;
 }
+
+/* spacing between the inline buttons */
+.social-top a:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-bottom {
+  margin-top: 20px;
+}
+
+/* add space between socials section and skills panel */
+.socials {
+  margin-bottom: 40px;
+}
+
+/* maintain .terminal-btn for backwards compatibility, no extra rules needed */
+.terminal-btn {}
+
 
 .academic {
   display: flex;
@@ -228,30 +246,85 @@ a {
   padding: 25px;
 }
 
+/* skill section restored to previous gradient-based styling */
 .skill-panel {
   display: flex;
   flex-direction: column;
   padding-bottom: 75px;
+  width: 75%;
 }
 
 .skills {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.skill {
+/* apply to each child, using class-based modifiers */
+.skills div {
   display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
   height: 25px;
-  min-width: 150px;
-  margin: 5px;
+  margin: 10px;
+  padding: 0px 20px; /* increased horizontal padding for extra space around text */
   border-style: solid;
   border-radius: 15px;
   font-size: 20px;
   font-weight: 700;
+  width: calc(fit-content + 20px);
+  min-width: auto;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
+
+.skill-programming {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to left, #f03b3b, #f78400);
+}
+
+.skill-paradigm {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to left, #5ee73c, #6baf3e);
+}
+
+.skill-paradigm-important {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to left, #7fa3f0, #4797e2);
+}
+
+.skill-hard {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to left, #7954e0, #aa8bdd);
+}
+
+/* new skill gradient classes */
+.skill-distributed {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to left, #00c6ff, #0072ff); /* blue */
+}
+
+.skill-systems {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to left, #ff6a00, #ee0979); /* orange-pink */
+}
+
+.skill-backend {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to left, #11998e, #38ef7d); /* teal-green */
+}
+
+.skill-ml {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to left, #fc00ff, #00dbde); /* magenta to aqua */
+}
+
+.skill-ai {
+  flex: 0 0 auto;
+  background-image: linear-gradient(to left, #ff512f, #dd2476); /* red to purple */
+}
+
 
 .contact {
   display: flex;
@@ -391,9 +464,14 @@ a {
 .project img {
   width: 100%; /* Full width inside the box */
   max-height: 200px; /* Limit height */
-  object-fit: cover; /* Keep aspect ratio */
+  object-fit: contain; /* show whole image without cropping */
   border-radius: 8px;
   margin-bottom: 0.75rem;
+}
+
+/* ensure project titles are readable on light background */
+.project strong {
+  color: black;
 }
 
 .project strong {
@@ -404,4 +482,15 @@ a {
 .project p {
   font-size: 0.95rem;
   color: #555;
+}
+
+/* make entire project card clickable without altering layout */
+.project-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-link strong {
+  color: black; /* inherited from earlier rule, ensure link doesn't revert to blue */
 }
