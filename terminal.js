@@ -35,6 +35,81 @@
     }
   }
 
+  /**
+   * Represents a file or directory discovered on disk.
+   * This class is a plain data container — the actual filesystem scanning
+   * and population of instances will be implemented elsewhere.
+   *
+   * Intended usage: create an instance and later call a scanner to populate
+   * properties like size, mtime, mimeType, and optionally `content`.
+   */
+  class FileEntry {
+    /**
+     * @param {object} [opts]
+     * @param {string} [opts.path] - Absolute path to the file or directory
+     * @param {string} [opts.name] - Base name (file or directory name)
+     * @param {boolean} [opts.isDirectory=false]
+     * @param {number} [opts.size=0] - Size in bytes (for files)
+     * @param {Date|string|null} [opts.mtime=null] - Last modified time
+     * @param {string|null} [opts.mimeType=null] - Detected MIME type
+     * @param {string|null} [opts.hash=null] - Optional content hash (sha1/sha256)
+     * @param {object|null} [opts.mode=null] - File mode/permissions object (platform dependent)
+     */
+    constructor(opts = {}){
+      this.path = opts.path || null;
+      this.name = opts.name || (this.path ? String(this.path).split('/').pop() : null);
+      this.isDirectory = Boolean(opts.isDirectory);
+      this.size = typeof opts.size === 'number' ? opts.size : 0;
+      this.mtime = opts.mtime ? new Date(opts.mtime) : null;
+      this.mimeType = opts.mimeType || null;
+      this.hash = opts.hash || null;
+      this.mode = opts.mode || null;
+
+      // content is intentionally left null until a scanner reads the file
+      this.content = null;
+
+      // for directories, children will be an array of FileEntry instances (populated by a scanner)
+      this.children = Array.isArray(opts.children) ? opts.children.slice() : null;
+    }
+
+    /**
+     * Lightweight JSON representation suitable for sending to the UI.
+     */
+    toJSON(){
+      return {
+        path: this.path,
+        name: this.name,
+        isDirectory: this.isDirectory,
+        size: this.size,
+        mtime: this.mtime ? this.mtime.toISOString() : null,
+        mimeType: this.mimeType,
+        hash: this.hash,
+        mode: this.mode,
+        // do not include raw content by default
+        hasContent: this.content != null,
+        children: this.children ? this.children.map(c => c.toJSON()) : null
+      };
+    }
+
+    /**
+     * Set the in-memory content for this entry. Scanner will call this when
+     * it reads file bytes/text. Caller may pass a string or Uint8Array.
+     * @param {string|Uint8Array} data
+     */
+    setContent(data){
+      this.content = data;
+    }
+
+    /**
+     * Placeholder for a platform/stat-based initializer. The actual implementation
+     * should map fs.Stats (Node) or other metadata into this instance.
+     * Not implemented here by design.
+     */
+    static fromStat(/* statObj */){
+      throw new Error('FileEntry.fromStat is not implemented; implement scanning separately');
+    }
+  }
+
   // Simple registry for commands
   // Registry that stores commands by name.
   const commands = new Map();

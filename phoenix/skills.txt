@@ -1,0 +1,18 @@
+== CORE SYSTEMS ==
+- Data Structures
+- Algorithms
+- Computer Architecture
+- Operating Systems Principles
+
+== DEVELOPMENT ==
+- Python
+- C
+- SQL
+- Git
+- Linux
+
+== INFRASTRUCTURE ==
+- Docker
+- Proxmox
+- Cloud (Azure / Oracle Cloud)
+- Networking fundamentals
